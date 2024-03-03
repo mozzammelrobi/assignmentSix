@@ -17,7 +17,7 @@ const displayAllPost = (posts) => {
         postCard.classList = 'card-body bg-[#F3F3F5]';
 
         postCard.innerHTML = `
-        <div class="flex gap-3">
+        <div class="flex flex-col lg:flex-row gap-3">
         <!-- img profile -->
         <div class="relative">
             <i class="absolute left-14 fa-solid fa-circle ${post.isActive ? 'text-green-400' : 'text-red-500'} "></i>
@@ -55,7 +55,7 @@ const displayAllPost = (posts) => {
                     <p> <span>${post.posted_time}</span> min</p>
                 </div>
                 <div class="flex gap-2 items-center  text-green-500">
-                    <button onclick="readMark('${post.title}','${post.view_count}')" calss="btn"> <i class="fa-regular fa-circle-dot"></i> </button>
+                    <button onclick="readMark('${post.title}','${post.view_count}')" calss="btn"> <i class="fa-solid fa-check-double"></i></button>
                 </div>
                 
             </div>
@@ -114,10 +114,8 @@ const loadLatestPost = async () => {
 
 
 const markAsReadContainer = document.getElementById('mark-as-read-container')
-
 let count = 0;
 const readMark = (title, view) => {
-    console.log('button click', title, 'and view is', view)
     count++
 
     const clickCount = document.getElementById('click-count')
