@@ -1,0 +1,7 @@
+#banner-section {
+    background-image: url('../images/bgbanner.png');
+
+    border-radius: 32px;
+
+    background: rgb(18, 19, 45);
+}
